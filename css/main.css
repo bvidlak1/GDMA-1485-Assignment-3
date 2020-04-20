@@ -1,3 +1,588 @@
 @charset "UTF-8";
 /* CSS Document */
 
+/*--------------------------------------------------------------
+>>> DESIGN SPECIFIC COSMETICS
+----------------------------------------------------------------
+-- FONTS -- 
+font-family: 'Oswald', sans-serif;
+font-family: 'Inter', sans-serif;
+
+-- COLORS --
+#272727 = Background Gray
+#323232 = Middle Gray
+#717272 = Light Gray
+#caa480 = Tan
+#ffffff = White
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> CSS STANDARDS
+----------------------------------------------------------------
+1. Place in appropriate section
+2. Add new sections to the Table of Contents as needed
+3. Order properties consistently inside each declaration i.e. alphabetically or by function 
+4. Declaration selectors should each occupy a new line
+5. Enter one new line between rules
+6. Enter more than one new line between categories 
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Settings: used with preprocessors and contain font, colors definitions, etc.
+2.0 - Tools: globally used mixins and functions. Use for preprocessor only.
+3.0 - Generic: reset and/or normalize styles, box-sizing definition, etc.
+4.0 - Elements: styling for bare/generic HTML elements 
+        - Forms
+        - Lists
+        - Media
+        - Tables
+        - Typography: Headings, Paragraphs, Blockquotes, Anchors
+5.0 - Objects: class-based selectors which define undecorated design patterns, building blocks
+        - Framework
+6.0 - Components: specific designed components
+        - Buttons
+        - Header
+        - Navigation 
+7.0 - Utilities: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
+        - Alignment	    
+        - Color
+        - Size
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+3.0 - Generic
+-------------------------------------------------------------- */
+
+*{
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box; 
+	-ms-box-sizing: border-box; 
+	box-sizing: border-box;
+	font-family: 'Inter', sans-serif;
+}
+
+/*--------------------------------------------------------------
+4.0 - ELEMENTS 
+-------------------------------------------------------------- */
+/* --HERO IMAGE-- */
+.hero-image {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/head.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.col-1-4 {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.col-1-4:first-child {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/paris.jpg")
+}
+
+.col-1-4:nth-child(2) {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/new-york.jpg")
+}
+
+.col-1-4:nth-child(3) {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/london.jpg")
+}
+
+.col-1-4:last-child {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/tokyo.jpg")
+}
+
+/* --BACKGROUND-- */
+#gry-bkgrnd {
+	background-color: #323232;
+	width: 240px;
+	height: 207px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+
+#gry-bkgrnd-2 {
+	background-color: #323232;
+	width: 146px;
+	height: 375px;
+	position: absolute;
+	top: 190px;
+	left: 0px;
+	z-index: 1;
+}
+
+body {
+	background-color: #272727;
+}
+
+/*--TYPOGRAPHY--*/
+
+h1 {
+	font-size: 20px;
+	position: relative;
+	top: 30px;
+	left: 80px;
+}
+
+header p, header .col-1-2 a, h1, h2, h3, h4, header .col-2-3:nth-child(2) a, .col-1-3:nth-child(2) p, .col-1-4 p, #twelve p, .button {
+	color: #ffffff;
+}
+
+header .wrapper:first-child {
+	padding-top: 30px;
+}
+
+header .wrapper:last-child {
+	width: 1400px;
+	padding-bottom: 50px;
+}
+
+header .wrapper:last-child section {
+	margin-right: 170px;
+}
+
+h2 {
+	font-size: 37px;
+	padding: 100px;
+}
+
+h2, #center p {
+	text-align: center;
+}
+
+h3, #twelve p {
+	font-size: 30px;
+}
+
+span, .col-1-3:nth-child(2) p i {
+	color: #caa480;
+}
+
+#about section p, #date p, header .col-2-3:first-child a, header .col-2-3:first-child li, .col-1-3:first-child p, #clients p, .col-2-2:first-child a, footer .col-2-2:last-child p {
+	color: #717272;
+}
+
+h2, #projects h3, span, header .col-1-2 a, #date p, header .col-2-3:nth-child(2) a, .col-1-4 p, #twelve p, #clients p {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 400;
+}
+
+h2, #projects h3, header nav a, header .col-2-3:nth-child(2) a, .col-1-3:nth-child(2) p, #twelve p, #clients p, .button {
+	text-transform: uppercase;
+}
+
+header .col-1-2 a, header .col-2-3:nth-child(2) a, #clients p {
+	letter-spacing: 3px;
+}
+
+h2, p, h1, #center {
+	margin: 0;
+}
+
+h2, .col-1-4 p {
+	letter-spacing: 10px;
+}
+
+/* --TOP BAR -- */ 
+nav {
+	margin: 0 0 0 0;
+}
+
+nav li, header .col-2-3:nth-child(2) li{
+	text-decoration: none;
+	display: inline-block;
+	margin-right: 50px;
+}
+
+nav {
+	margin-right: 0;
+}
+
+a {
+	text-decoration: none;
+	font-size: 13px;
+}
+
+header h1, .col-1-2, .col-2-3 {
+	margin: 13px 0 0 0;
+}
+
+#top-bar .col-1-2 {
+	margin: 16px 0 0 160px;
+}
+
+.col-2-3:last-child {
+	height: 360px;
+}
+
+.col-2-3:first-child {
+	position: relative;
+	top: 60px;
+	left: -68px;
+}
+
+.col-2-3:nth-child(2) a {
+	font-size: 17px;
+}
+
+.col-2-3:nth-child(2){
+	width: 300px;
+	margin: 50px 0 0 100px;
+}
+
+.col-2-3:last-child h2 {
+	line-height: 80px;
+}
+
+.col-2-3:last-child p {
+	line-height: 28px;
+	margin-top: 12px;
+	padding-bottom: 30px;
+}
+
+.col-2-3:last-child {
+	width: 575px;
+	text-align: right;
+}
+
+.col-2-3:first-child li {
+	line-height: 60px;
+}
+
+.col-2-3 h2, #date span {
+	font-size: 50px;
+	padding: 0;
+	text-align: right;
+}
+
+#top-bar .col-1-2:last-child, header .col-2-3:last-child {
+	margin: 0;
+}
+
+/*--------------------------------------------------------------
+5.0 - OBJECTS 
+-------------------------------------------------------------- */
+
+#date {
+	position: relative;
+	z-index: +1;
+	top: 30px;
+	left: -58px;
+}
+
+#date p:first-child {
+	margin-left: 60px;
+	word-spacing: 5px;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 1170px;
+}
+
+.row {
+	overflow: auto;
+}
+
+header .col-1-2 a, .col-2-2:first-child ul {
+	text-decoration: none;
+}
+
+/* -- FORMS -- */ 
+
+.col-1-3:first-child {
+    margin: 13px 100px 0 0;
+}
+
+.col-1-3:first-child p {
+    line-height: 23px;
+}
+
+.col-1-3 {
+    padding: 0 20px 0 20px;
+}
+
+.col-1-3:nth-child(2) {
+	width: 290px; 
+}
+
+.col-1-3:nth-child(2) p i {
+	font-size: 40px;
+	margin: 13px 0 0 0;
+}
+
+.col-1-3:nth-child(2) p {
+	font-weight: 700;
+	font-size: 19px;
+	letter-spacing: 2px;
+	margin: 17px 0 0 0;
+}
+
+div > header .wrapper .row div, .col-1-3, header h1, .col-1-2, .col-2-3, footer .col-2-2, .col-2-2:first-child, .col-3-3, .col-1-10 p:first-child, .col-1-10, .col-1-4:first-child, .col-1-4:nth-child(2), .col-1-4:nth-child(3) {
+    float: left;
+}
+
+#about img, footer .col-2-2:last-child p, #contacts .button, .col-3-3:last-child, .col-2-2:last-child, .col-1-10:last-child, #top-bar .col-1-2:last-child, header .col-2-3:last-child, .col-1-10 p:last-child, .col-1-4:last-child {
+	float: right;
+}
+
+.col-1-3 {
+    width: 350px;
+}
+
+#about img {
+	width: 33%;
+	margin-top: 40px;
+}
+/*-------------------------------------------------------------- 
+6.0 - Components: specific designed components
+-------------------------------------------------------------- */
+/* --FOOTER-- */
+
+footer .col-2-2 {
+	padding: 0 0 25px 0;
+	margin-bottom: 40px;
+}
+
+footer .col-2-2:last-child p {
+	font-size: 12px;
+	padding: 25px 0 0 0;
+}
+
+footer span {
+	font-family: 'inter', sans-serif;
+}
+
+footer .col-2-2:first-child p {
+	font-size: 40px;
+	font-weight: 700;
+	color: #ffffff;
+}
+
+/* --CONTACTS-- */
+#contacts {
+	margin-bottom: 150px;
+}
+
+#contacts .button {
+	margin: 12px 0;
+}
+
+.col-2-2:first-child {
+	width: 310px;
+}
+
+.col-2-2:first-child ul{
+	padding: 0;
+}
+
+.col-2-2:first-child li {
+	display: inline-block;
+	line-height: 35px;
+}
+
+.col-2-2:first-child a {
+	font-size: 18px;
+}
+
+.col-2-2:last-child {
+	width: 780px;
+}
+
+input, textarea {
+	color: #ffffff;
+	display: block;
+	width: 248px;
+	margin: 12px 6px;
+	padding: 0 20px 0;
+ 	box-sizing: border-box;
+	border-radius: 15px;
+	background-color: #323232 ;
+  	resize: none;
+	border-style: none;
+}
+
+textarea {
+	height: 150px;
+	padding: 25px 20px 0;
+}
+
+input {
+	height: 69px;
+}
+
+:focus { 
+	outline: none; 
+}
+
+::placeholder { 
+	color: #ffffff;
+  	opacity: 1; 
+}
+
+:-ms-input-placeholder { 
+  	color: #ffffff;
+}
+
+::-ms-input-placeholder { 
+  	color: #ffffff;
+}
+
+/* --CLIENTS-- */
+
+#clients #center{
+	margin-top: 60px;
+}
+
+.col-1-10 {
+	width: 180px;
+	margin: 10px;
+	padding-bottom: 40px;
+}
+
+.col-1-10 p:first-child {
+	font-size: 30px;
+}
+
+.col-1-10:first-child, .col-1-10:nth-child(2), .col-1-10:nth-child(3), .col-1-10:nth-child(4) {
+	margin-right: 51px;
+}
+
+/* --TWELVE-- */
+
+#twelve header img {
+	width: 50%;
+	height: auto;
+	padding: 60px 0 0 240px;
+	align-content: center;
+	
+}
+
+#twelve p {
+	line-height: 36px;
+	margin-left: 600px;
+}
+
+/* --HERO SECTION-- */
+
+.col-1-4 h3 {
+	padding: 25px 0 0 60px;
+	width: 300px;
+}
+
+.col-1-4 p {
+	margin: 360px 0 90px 0px;
+	width: 300px;
+	line-height: 35px;
+}
+
+.col-1-4 p:first-child {
+	top: 90px;
+}
+
+.col-1-4 {
+	width: 360px;
+	height: 650px;
+}
+
+/* --VERTICAL TEXT-- */
+
+.vert-text {
+    display: block;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    font-weight: normal;
+    text-transform: uppercase;
+    max-width: 156px;
+}
+
+.vert-text {
+    min-width: 70px;
+}
+
+/* --BARS-- */
+.col-bar {
+	height: 924px;
+	width: 390px;
+	border-width: 0 10px;
+	border-color: #323232;
+	border-style: ridge;
+	opacity: 10%;
+	position: absolute;
+}
+
+.col-bar:first-child {
+	left: 910px;
+}
+
+.col-bar-2 {
+	height: 1671px;
+	width: 390px;
+	border-width: 0 10px;
+	border-color: #323232;
+	border-style: ridge;
+	opacity: 10%;
+	position: absolute;
+}
+
+.col-bar-2:first-child {
+	left: 910px;
+}
+/*--------------------------------------------------------------
+7.0 - UTILITIES
+-------------------------------------------------------------- */
+
+/* -- BUTTON -- */
+.button {
+	background-color: #caa480;
+	border-radius: 60px;
+	font-size: 15px;
+	letter-spacing: 2px;
+	padding: 15px 30px;
+	font-weight: 700;
+}
+
+/* --HOVER-- */
+
+.col-1-4:first-child:hover {
+	background-image: url("../img/paris.jpg");
+}
+
+.col-1-4:nth-child(2):hover {
+	background-image: url("../img/new-york.jpg")
+}
+
+.col-1-4:nth-child(3):hover {
+	background-image: url("../img/london.jpg")
+}
+
+.col-1-4:last-child:hover {
+	background-image: url("../img/tokyo.jpg")
+} 
+
+.col-1-2 a:hover, .col-2-3 li a:hover {
+	color: #caa480;
+}
+
+.button:hover {
+	background-color: #7D664F;
+}
+
+.col-2-2 li a:hover {
+	color: #ffffff;
+	font-size: 119%;
+}
+
+.button:hover, .col-2-2 li a:hover, .col-1-2 a:hover, .col-2-3 li a:hover {
+	transition-duration: 0.2s;
+}
